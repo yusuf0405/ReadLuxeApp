@@ -14,3 +14,15 @@ dependencyResolutionManagement {
 }
 rootProject.name = "ReadLuxeApp"
 include ':app'
+
+include(":core:data")
+include(":core:common")
+include(":core:ui")
+
+include(":feature-modules:reading-screen:api")
+include(":feature-modules:reading-screen:data")
+include(":feature-modules:reading-screen:presentation")
+
+include(":feature-modules:add-book-screen:api")
+include(":feature-modules:add-book-screen:data")
+include(":feature-modules:add-book-screen:presentation")
