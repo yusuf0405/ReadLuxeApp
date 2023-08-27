@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    // Fonts
+    <string name="garamond">Garamond</string>
+    <string name="caslon">Caslon</string>
+    <string name="baskerville">Baskerville</string>
+    <string name="dante">Dante</string>
+    <string name="janson">Janson</string>
+    <string name="pequena_pro">Pequena Pro</string>
+
+    <string name="regular">Regular</string>
+    <string name="bold">Bold</string>
+    <string name="italic">Italic</string>
+    <string name="light">Light</string>
+    <string name="light_italic">Light italic</string>
+    <string name="layer_one">Layer one</string>
+    <string name="shape">Shape</string>
+
+    <string name="fonts">Fonts</string>
+    <string name="style">Style</string>
+    <string name="sizes">Sizes</string>
+    <string name="Aa">Aa</string>
+</resources>

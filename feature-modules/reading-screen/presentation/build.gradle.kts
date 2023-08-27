@@ -1,12 +1,19 @@
+import Dependencies.coroutines
+
 plugins {
-    id("compose-setup")
-    id("android-setup")
+    id(Plugins.ANDROID_SETUP)
+    id(Plugins.COMPOSE_SETUP)
+    id(Plugins.HILT_SETUP)
+    id(Plugins.HILT_PLUGIN)
 }
 
 android {
     namespace = "com.joseph.readluxe.featuremodules.readingscreen.presentation"
+}
 
-    dependencies {
-        implementation(project(":core:ui"))
-    }
+dependencies {
+    implementation(project(Modules.CORE_COMMON))
+    implementation(project(Modules.CORE_UI))
+    implementation(project(Modules.CORE_DATA))
+    coroutines()
 }

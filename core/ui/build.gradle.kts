@@ -1,7 +1,6 @@
-
 plugins {
-    id("compose-setup")
-    id("android-setup")
+    id(Plugins.ANDROID_SETUP)
+    id(Plugins.COMPOSE_SETUP)
 }
 
 android {
