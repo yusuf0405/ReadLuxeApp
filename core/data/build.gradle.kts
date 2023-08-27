@@ -1,6 +1,5 @@
-
 plugins {
-    id("android-setup")
+    id(Plugins.ANDROID_SETUP)
 }
 
 android {

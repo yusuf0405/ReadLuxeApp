@@ -1,24 +1,28 @@
+import org.gradle.kotlin.dsl.dependencies
+import Dependencies.coroutines
+import Dependencies.navigation
 
 plugins {
     id("com.android.library")
+    kotlin("android")
+    id("kotlin-parcelize")
 }
 
 android {
-    compileSdk = Dependencies.SdkVersions.compileSdk
+    compileSdk = Versions.COMPILE_SDK
 
     defaultConfig {
-        minSdk = Dependencies.SdkVersions.minSdk
+        minSdk = Versions.MIN_SDK
+        targetSdk = Versions.TARGET_SDK
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = Versions.JAVA
+        targetCompatibility = Versions.JAVA
     }
 
-    sourceSets {
-        named("main"){
-            manifest.srcFile("src/androidMain/AndroidManifest.xml")
-            res.srcDirs("src/androidMain/res", "src/commonMain/resources")
-        }
+    kotlinOptions {
+        jvmTarget = Versions.JAVA.toString()
     }
 }

@@ -1,12 +1,11 @@
-
 plugins {
-    id("android-setup")
+    id(Plugins.ANDROID_SETUP)
 }
 
 android {
     namespace = "com.joseph.readluxe.featuremodules.addbookscreen.data"
 
     dependencies {
-        implementation(project(":core:data"))
+        implementation(project(Modules.CORE_DATA))
     }
 }

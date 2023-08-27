@@ -1,25 +1,46 @@
 package com.joseph.readluxeapp
 
 import android.os.Bundle
+import android.view.KeyEvent
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.joseph.readluxeapp.ui.theme.ReadLuxeAppTheme
+import androidx.activity.viewModels
+import com.joseph.readluxe.core.ui.theme.ReadLuxeAppTheme
+import com.joseph.readluxeapp.common.navigation.common.VolumeButtonClickActions
+import com.joseph.readluxeapp.navigation.AppNavGraph
+import com.joseph.readluxeapp.navigation.routers.ReadingScreenRouter
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+
+    private val viewModel: MainActivityViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             ReadLuxeAppTheme {
-
-                
+                AppNavGraph(
+                    routers = viewModel.routers.toList(),
+                    startDestination = ReadingScreenRouter().route()
+                )
             }
+        }
+    }
+
+    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+        return when (event?.keyCode) {
+            KeyEvent.KEYCODE_VOLUME_UP -> {
+                viewModel.setVolumeButtonClickActions(VolumeButtonClickActions.VOLUME_UP)
+                return true
+            }
+
+            KeyEvent.KEYCODE_VOLUME_DOWN -> {
+                viewModel.setVolumeButtonClickActions(VolumeButtonClickActions.VOLUME_DOWN)
+                return true
+            }
+
+            else -> super.onKeyDown(keyCode, event)
         }
     }
 }
