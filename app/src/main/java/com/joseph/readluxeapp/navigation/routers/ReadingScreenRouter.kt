@@ -6,12 +6,13 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import com.joseph.readluxe.core.common.navigation.FeatureRouterApi
-import screens.ReadingScreen
-import screens.ReadingScreenViewModel
+import com.joseph.readluxe.readingscreen.presentation.presentation.screens.ReadingScreen
+import com.joseph.readluxe.readingscreen.presentation.presentation.screens.ReadingScreenViewModel
 import javax.inject.Inject
 
 class ReadingScreenRouter @Inject constructor() : FeatureRouterApi {
-    override fun route(): String = "reading_screen"
+
+    override fun route(): String = READING_SCREEN_ROUTE
 
     override fun registerGraph(
         navGraphBuilder: NavGraphBuilder,
@@ -29,5 +30,9 @@ class ReadingScreenRouter @Inject constructor() : FeatureRouterApi {
                 volumeButtonsFlow = viewModel.volumeButtonsFlow()
             )
         }
+    }
+
+    companion object {
+        const val READING_SCREEN_ROUTE = "reading_screen_route"
     }
 }

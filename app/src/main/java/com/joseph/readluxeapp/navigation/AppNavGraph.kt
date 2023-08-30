@@ -5,7 +5,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import com.joseph.readluxe.core.common.navigation.FeatureRouterApi
-import com.joseph.readluxeapp.common.navigation.navigation.register
+import com.joseph.readluxe.core.common.navigation.register
 
 
 @Composable

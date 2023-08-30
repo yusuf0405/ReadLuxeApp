@@ -20,11 +20,15 @@
             <option value="$PROJECT_DIR$/feature-modules" />
             <option value="$PROJECT_DIR$/feature-modules/add-book-screen" />
             <option value="$PROJECT_DIR$/feature-modules/add-book-screen/api" />
-            <option value="$PROJECT_DIR$/feature-modules/add-book-screen/data" />
             <option value="$PROJECT_DIR$/feature-modules/add-book-screen/presentation" />
+            <option value="$PROJECT_DIR$/feature-modules/main-screen" />
+            <option value="$PROJECT_DIR$/feature-modules/main-screen/api" />
+            <option value="$PROJECT_DIR$/feature-modules/main-screen/presentation" />
+            <option value="$PROJECT_DIR$/feature-modules/onboarding-screen" />
+            <option value="$PROJECT_DIR$/feature-modules/onboarding-screen/api" />
+            <option value="$PROJECT_DIR$/feature-modules/onboarding-screen/presentation" />
             <option value="$PROJECT_DIR$/feature-modules/reading-screen" />
             <option value="$PROJECT_DIR$/feature-modules/reading-screen/api" />
-            <option value="$PROJECT_DIR$/feature-modules/reading-screen/data" />
             <option value="$PROJECT_DIR$/feature-modules/reading-screen/presentation" />
           </set>
         </option>

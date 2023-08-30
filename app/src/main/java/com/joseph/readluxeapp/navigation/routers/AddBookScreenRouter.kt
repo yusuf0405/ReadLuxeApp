@@ -4,13 +4,13 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
+import com.joseph.readluxe.addbookscreen.presentation.AddBookScreen
 import com.joseph.readluxe.core.common.navigation.FeatureRouterApi
-import screens.AddBookScreen
 import javax.inject.Inject
 
 class AddBookScreenRouter @Inject constructor() : FeatureRouterApi {
 
-    override fun route(): String = "add_book_screen"
+    override fun route(): String = ADD_BOOK_SCREEN_ROUTE
 
     override fun registerGraph(
         navGraphBuilder: NavGraphBuilder,
@@ -22,5 +22,9 @@ class AddBookScreenRouter @Inject constructor() : FeatureRouterApi {
                 modifier = modifier,
             )
         }
+    }
+
+    companion object {
+        private const val ADD_BOOK_SCREEN_ROUTE = "add_book_screen_route"
     }
 }

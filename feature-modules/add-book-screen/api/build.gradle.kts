@@ -3,5 +3,5 @@ plugins {
 }
 
 android {
-    namespace = "com.joseph.readluxe.featuremodules.addbookscreen.api"
+    namespace = FeatureAddBookApiDependencies.namespace
 }
