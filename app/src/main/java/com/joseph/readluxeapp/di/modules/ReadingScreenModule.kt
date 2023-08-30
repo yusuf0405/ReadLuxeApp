@@ -20,7 +20,6 @@ class ReadingScreenModule {
     fun providesReadingScreenModuleDependencies(
         mainScreenApi: MainScreenApi
     ) = object : ReadingScreenModuleDependencies {
-
         override fun fetchBookRepository(): BooksRepository = mainScreenApi.provideBooksRepository()
     }
 

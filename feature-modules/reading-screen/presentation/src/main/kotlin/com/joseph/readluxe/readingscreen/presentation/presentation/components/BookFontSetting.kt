@@ -35,7 +35,7 @@ import androidx.compose.ui.unit.dp
 import com.joseph.readluxe.core.ui.R
 import com.joseph.readluxe.core.ui.extensions.SpacerHeight
 import com.joseph.readluxe.core.ui.extensions.SpacerWidth
-import com.joseph.readluxe.core.ui.extensions.noRippleClickable
+import com.joseph.readluxe.core.ui.extensions.clickableNoRipple
 import com.joseph.readluxe.core.ui.theme.LargeSpacing
 import com.joseph.readluxe.core.ui.theme.MediumSpacing
 import com.joseph.readluxe.core.ui.theme.ReadLuxeAppTheme
@@ -166,7 +166,7 @@ fun BookFontSetting(
                 key = { item -> item.hashCode() }
             ) { font ->
                 StyleItem(
-                    modifier = modifier.noRippleClickable { onFontSelected(font) },
+                    modifier = modifier.clickableNoRipple { onFontSelected(font) },
                     title = stringResource(id = R.string.Aa),
                     description = stringResource(id = font.titleId),
                     fontFamily = font.fontFamily(),
@@ -192,7 +192,7 @@ fun BookFontSetting(
             ) { style ->
                 Row {
                     StyleItem(
-                        modifier = modifier.noRippleClickable { onFontStyleSelected(style) },
+                        modifier = modifier.clickableNoRipple { onFontStyleSelected(style) },
                         title = stringResource(id = R.string.Aa),
                         description = stringResource(id = style.titleId),
                         fontFamily = style.fontFamily(),
