@@ -1,7 +1,21 @@
 package com.joseph.readluxe.core.ui.theme
 
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 
+val titleExtraLargeFontSize = 28.sp
+val titleLargeFontSize = 26.sp
+val titleExtraMediumFontSize = 24.sp
+val titleMediumFontSize = 22.sp
+val titleExtraSmallFontSize = 21.sp
+val titleSmallFontSize = 20.sp
+
+val bodyExtraLargeFontSize = 18.sp
+val bodyLargeFontSize = 17.sp
+val bodyExtraMediumFontSize = 16.sp
+val bodyMediumFontSize = 14.sp
+val bodyExtraSmallFontSize = 13.sp
+val bodySmallFontSize = 12.sp
 
 val SmallSpacing = 4.dp
 val MediumSpacing = 8.dp

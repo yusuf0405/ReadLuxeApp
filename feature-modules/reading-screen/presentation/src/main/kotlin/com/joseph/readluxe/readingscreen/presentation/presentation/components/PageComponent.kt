@@ -26,7 +26,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.joseph.readluxe.core.ui.extensions.fadingEdge
-import com.joseph.readluxe.core.ui.extensions.noRippleClickable
+import com.joseph.readluxe.core.ui.extensions.clickableNoRipple
 import com.joseph.readluxe.core.ui.theme.LargeSpacing
 import com.joseph.readluxe.core.ui.theme.MediumSpacing
 import com.joseph.readluxe.core.ui.theme.ReadLuxeAppTheme
@@ -76,7 +76,7 @@ fun PageItem(
                 .fillMaxSize()
                 .background(background)
                 .padding(LargeSpacing)
-                .noRippleClickable { onClick() }
+                .clickableNoRipple { onClick() }
         ) {
             Spacer(modifier = modifier.height(LargeSpacing + MediumSpacing))
             SelectionContainer(
@@ -109,14 +109,14 @@ fun PageItem(
                 .width(80.dp)
                 .fillMaxHeight()
                 .align(Alignment.CenterStart)
-                .noRippleClickable { openPreviousPage() }
+                .clickableNoRipple { openPreviousPage() }
         )
         Spacer(
             modifier = modifier
                 .width(80.dp)
                 .fillMaxHeight()
                 .align(Alignment.CenterEnd)
-                .noRippleClickable { openNextPage() }
+                .clickableNoRipple { openNextPage() }
         )
     }
 }

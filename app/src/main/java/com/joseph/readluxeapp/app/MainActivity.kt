@@ -8,7 +8,7 @@ import androidx.activity.viewModels
 import com.joseph.readluxe.core.ui.theme.ReadLuxeAppTheme
 import com.joseph.readluxeapp.common.navigation.common.VolumeButtonClickActions
 import com.joseph.readluxeapp.navigation.AppNavGraph
-import com.joseph.readluxeapp.navigation.routers.MainScreenRouter.Companion.MAIN_SCREEN_ROUTE
+import com.joseph.readluxeapp.navigation.routers.OnboardingScreenRouter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -22,7 +22,7 @@ class MainActivity : ComponentActivity() {
             ReadLuxeAppTheme {
                 AppNavGraph(
                     routers = viewModel.routers.toList(),
-                    startDestination = MAIN_SCREEN_ROUTE
+                    startDestination = OnboardingScreenRouter.ONBOARDING_SCREEN_ROUTE
                 )
             }
         }
