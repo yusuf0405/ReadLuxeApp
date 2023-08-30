@@ -1,3 +1,7 @@
+import AppDependencies.debugImplementations
+import AppDependencies.implementations
+import AppDependencies.kapts
+import gradle.kotlin.dsl.accessors._404981569cb7bc4f1f0ba7441ad57f27.implementation
 import org.gradle.kotlin.dsl.DependencyHandlerScope
 
 object Dependencies {
@@ -19,6 +23,10 @@ object Dependencies {
         object Coroutines {
             const val core =
                 "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.Kotlin.Coroutines.version}"
+
+            val coroutinesDependencies = listOf(
+                core
+            )
         }
     }
 
@@ -46,6 +54,23 @@ object Dependencies {
         val uiToolingCompose = "androidx.compose.ui:ui-tooling:${Versions.Compose.version}"
         val uiTestManifestCompose =
             "androidx.compose.ui:ui-test-manifest:${Versions.Compose.version}"
+
+        val composeDependencies = listOf(
+            activityCompose,
+            uiCompose,
+            uiToolingPreviewCompose,
+            coilCompose,
+            drawablePainter,
+            lifecycleRuntimeCompose,
+            lifecycleViewModelCompose,
+            constraintlayoutCompose,
+            materialCompose,
+        )
+
+        val composeDebugDependencies = listOf(
+            uiTestManifestCompose,
+            uiToolingCompose,
+        )
     }
 
     object Ktor {
@@ -57,6 +82,17 @@ object Dependencies {
         const val logging = "io.ktor:ktor-client-logging:${Versions.Ktor.version}"
         const val okhttp = "io.ktor:ktor-client-okhttp:${Versions.Ktor.version}"
         const val android = "io.ktor:ktor-client-android:${Versions.Ktor.version}"
+
+        val ktorDependencies = listOf(
+            core,
+            android,
+            json,
+            logging,
+            okhttp,
+            serialization,
+            negotiation,
+            Kotlin.Serialization.serialization,
+        )
     }
 
     object Android {
@@ -73,6 +109,10 @@ object Dependencies {
         const val android = "com.google.dagger:hilt-android:${Versions.Hilt.version}"
         const val kapt = "com.google.dagger:hilt-android-compiler:${Versions.Hilt.version}"
 
+        val hiltDependencies = listOf(
+            android,
+            navigation_compose
+        )
     }
 
     const val android = "com.google.dagger:hilt-android:${Versions.Hilt.version}"
@@ -83,53 +123,33 @@ object Dependencies {
         const val runtime =
             "androidx.navigation:navigation-runtime-ktx:${Versions.Navigation.version}"
         const val compose = "androidx.navigation:navigation-compose:${Versions.Navigation.version}"
+
+        val navigationDependencies = listOf(
+            common,
+            runtime,
+            compose
+        )
     }
 
-    private const val IMLEMENTATION = "implementation"
-    private const val DEBUG_IMLEMENTATION = "debugImplementation"
-    private const val KAPT = "kapt"
-
-
     fun DependencyHandlerScope.compose() {
-        "$IMLEMENTATION"(Compose.activityCompose)
-        "$IMLEMENTATION"(Compose.uiCompose)
-        "$IMLEMENTATION"(Compose.uiToolingPreviewCompose)
-        "$IMLEMENTATION"(Compose.coilCompose)
-        "$IMLEMENTATION"(Compose.drawablePainter)
-        "$IMLEMENTATION"(Compose.lifecycleRuntimeCompose)
-        "$IMLEMENTATION"(Compose.lifecycleViewModelCompose)
-        "$IMLEMENTATION"(Compose.constraintlayoutCompose)
-        "$IMLEMENTATION"(Compose.materialCompose)
-        "$IMLEMENTATION"(Compose.materialCompose)
-        "$DEBUG_IMLEMENTATION"(Compose.uiTestManifestCompose)
-        "$DEBUG_IMLEMENTATION"(Compose.uiToolingCompose)
+        implementations(Compose.composeDependencies)
+        debugImplementations(Compose.composeDebugDependencies)
     }
 
     fun DependencyHandlerScope.navigation() {
-        "$IMLEMENTATION"(Navigation.common)
-        "$IMLEMENTATION"(Navigation.runtime)
-        "$IMLEMENTATION"(Navigation.compose)
+        implementations(Navigation.navigationDependencies)
     }
 
     fun DependencyHandlerScope.coroutines() {
-        "$IMLEMENTATION"(Kotlin.Coroutines.core)
+        implementations(Kotlin.Coroutines.coroutinesDependencies)
     }
 
-
     fun DependencyHandlerScope.ktor() {
-        "$IMLEMENTATION"(Ktor.core)
-        "$IMLEMENTATION"(Ktor.android)
-        "$IMLEMENTATION"(Ktor.json)
-        "$IMLEMENTATION"(Ktor.logging)
-        "$IMLEMENTATION"(Ktor.okhttp)
-        "$IMLEMENTATION"(Ktor.serialization)
-        "$IMLEMENTATION"(Kotlin.Serialization.serialization)
+        implementations(Ktor.ktorDependencies)
     }
 
     fun DependencyHandlerScope.hilt() {
-        "$IMLEMENTATION"(Hilt.android)
-        "$IMLEMENTATION"(Hilt.navigation_compose)
-        "$KAPT"(Hilt.kapt)
+        implementations(Hilt.hiltDependencies)
+        kapts(listOf(Hilt.kapt))
     }
-
 }

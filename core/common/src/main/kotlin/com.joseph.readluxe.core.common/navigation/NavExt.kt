@@ -1,9 +1,8 @@
-package com.joseph.readluxeapp.common.navigation.navigation
+package com.joseph.readluxe.core.common.navigation
 
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
-import com.joseph.readluxe.core.common.navigation.FeatureRouterApi
 
 fun NavGraphBuilder.register(
     featureApi: FeatureRouterApi,

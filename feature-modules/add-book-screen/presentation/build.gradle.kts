@@ -1,4 +1,4 @@
-import Dependencies.coroutines
+import FeatureAddBookPresentationDependencies.featureAddBookPresentationDependencies
 
 plugins {
     id(Plugins.ANDROID_SETUP)
@@ -6,12 +6,9 @@ plugins {
 }
 
 android {
-    namespace = "com.joseph.readluxe.featuremodules.addbookscreen.presentation"
+    namespace = FeatureAddBookPresentationDependencies.namespace
 }
 
 dependencies {
-    implementation(project(Modules.CORE_COMMON))
-    implementation(project(Modules.CORE_UI))
-    implementation(project(Modules.CORE_DATA))
-    coroutines()
+    featureAddBookPresentationDependencies()
 }

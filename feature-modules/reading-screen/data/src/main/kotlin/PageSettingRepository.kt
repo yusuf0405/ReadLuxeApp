@@ -1,5 +1,0 @@
-interface PageSettingRepository {
-
-    fun savePageFont()
-
-}

@@ -8,6 +8,8 @@ interface FeatureRouterApi {
 
     fun route(): String
 
+    fun routeWithArgs(): String = ""
+
     fun registerGraph(
         navGraphBuilder: NavGraphBuilder,
         navController: NavHostController,

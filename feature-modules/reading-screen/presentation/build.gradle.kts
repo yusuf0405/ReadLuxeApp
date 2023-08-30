@@ -1,4 +1,4 @@
-import Dependencies.coroutines
+import FeatureReadingPresentationDependencies.featureReadingPresentationDependencies
 
 plugins {
     id(Plugins.ANDROID_SETUP)
@@ -8,12 +8,9 @@ plugins {
 }
 
 android {
-    namespace = "com.joseph.readluxe.featuremodules.readingscreen.presentation"
+    namespace = FeatureReadingPresentationDependencies.namespace
 }
 
 dependencies {
-    implementation(project(Modules.CORE_COMMON))
-    implementation(project(Modules.CORE_UI))
-    implementation(project(Modules.CORE_DATA))
-    coroutines()
+    featureReadingPresentationDependencies()
 }
